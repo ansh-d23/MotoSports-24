@@ -125,42 +125,43 @@ const EventCard = ({heading,subHeading,description})=>{
 
 //Ourcar
 function Ourcar({events}) {
-    return (
-        <div>
-            <div className="flex ">
-                <div className="flex flex-col gap-y-3 w-full my-4">
-                    <Circle />
+  return (
+      <div>
+          <div className="flex flex-col md:flex-row ">
+              <div className="flex flex-col gap-y-3 w-full my-4 md:w-1/2">
+                  <Circle />
 
-                    {events.map((event,key) => {
-                        return <Fragment key={key}>
-                            <div className="grid grid-cols-[1fr_auto_1fr] gap-x-2 items-center mx-auto">
-                                {event.direction === 'left' ? (
-                                    <EventCard heading={event.heading} subHeading={event.subHeading} description={event.description} />
-                                ) : (
-                                    <div></div>
-                                )}
+                  {events.map((event,key) => {
+                      return <Fragment key={key}>
+                          <div className="grid grid-cols-[1fr_auto_1fr] gap-x-2 items-center mx-auto">
+                              {event.direction === 'left' ? (
+                                  <EventCard heading={event.heading} subHeading={event.subHeading} description={event.description} />
+                              ) : (
+                                  <div></div>
+                              )}
 
-                                <Pillar/>
+                              <Pillar/>
 
-                                {event.direction === 'right' ? (
-                                    <EventCard heading={event.heading} subHeading={event.subHeading} description={event.description} />
-                                ) : (
-                                    <div></div>
-                                )}
-                                
-                            </div>
+                              {event.direction === 'right' ? (
+                                  <EventCard heading={event.heading} subHeading={event.subHeading} description={event.description} />
+                              ) : (
+                                  <div></div>
+                              )}
+                              
+                          </div>
 
-                            {key <(events.length - 1) && <Circle/>}
-                        </Fragment>
-                    })}
+                          {key <(events.length - 1) && <Circle/>}
+                      </Fragment>
+                  })}
 
-                        <Circle />
-                    </div>
+                      <Circle />
+                  </div>
 
-                    <div className="flex"><img src=".\src\components\eBaja\pics\ebajacar2.png" alt="" className='img2'/></div>
-                </div>
-        </div>
-    )
+                  <div className="w-full md:w-1/2 flex items-center justify-center">
+                  <img src=".\src\components\eBaja\pics\ebajacar2.png" alt="" className='img2' class="w-full h-auto object-contain md:w-auto md:max-w-full"/></div>
+              </div>
+      </div>
+  )
 }
 
 //Textsphere
